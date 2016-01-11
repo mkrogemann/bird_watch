@@ -6,5 +6,5 @@ elixir:
 otp_release:
   - 18.2
 script:
-  - "MIX_ENV=test" mix run priv/repo/seeds.exs 
+  - "MIX_ENV=test mix run priv/repo/seeds.exs"
   - "MIX_ENV=test mix do deps.get, deps.compile, test --trace"
