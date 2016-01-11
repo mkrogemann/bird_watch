@@ -1,0 +1,8 @@
+{
+  "_id" : "_design/bird",
+  "views" : {
+    "by_link" : {
+      "map" : "function(doc){ emit(doc.link, doc)}"
+    }
+  }
+}

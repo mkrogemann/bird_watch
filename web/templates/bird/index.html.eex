@@ -1,0 +1,20 @@
+<div class="row row-content">
+  <ul class="media-list">
+    <%= for bird <- @birds["rows"] do %>
+    <li class="media">
+      <img class="media-object thumbnail pull-left"
+        src="images/175/<%= bird["value"]["image"] %>"
+        alt="<%= bird["value"]["name"] %>">
+      <div class="media-body bird-list">
+        <h3 class="media-heading list-name"><%= bird["value"]["name"] %></h3>
+        <p class="bird-list">
+          Date: <%= bird["value"]["date"] %><br>
+          Location: <%= bird["value"]["location"] %><br>
+          <a class="btn btn-lg" href="images/800/<%= bird["value"]["image"] %>" data-featherlight="image"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></a>
+          <a class="btn btn-lg" href="<%= bird["value"]["attribution_link"] %>" data-toggle="tooltip" data-placement="right" title="<%= info(bird) %>" target="_blank"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+        </p>
+      </div>
+   </li>
+   <% end %>
+  </ul>
+</div>
