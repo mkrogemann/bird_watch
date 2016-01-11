@@ -1,6 +1,10 @@
 # BirdWatch
 
-To start your Phoenix app:
+[![Build Status](https://travis-ci.org/mkrogemann/bird_watch.svg)](https://travis-ci.org/mkrogemann/bird_watch)
+
+Before you try to start the app, please install and start CouchDB.
+
+Then, to start your Phoenix app:
 
   1. Install dependencies with `mix deps.get`
   2. In case you want to seed the database, run `mix run priv/repo/seeds.exs`
