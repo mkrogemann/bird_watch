@@ -46,7 +46,7 @@ defmodule BirdWatch.Couchdb do
   end
 
   def read id do
-    {:ok, bird_json} = Reader.read @database_properties, id
+    {:ok, bird_json} = Reader.get @database_properties, id
     bird_json
   end
 
