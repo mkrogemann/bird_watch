@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mkrogemann/bird_watch.svg)](https://travis-ci.org/mkrogemann/bird_watch)
 
-The code in this repo is the subject of a [blog post](https://blog.codecentric.de/en/2016/01/elixir-phoenix-couchdb-introduction/).
+The code in this repo has been developed for a [blog post](https://blog.codecentric.de/en/2016/01/elixir-phoenix-couchdb-introduction/).
 
 Before you try to start the app, please install and start CouchDB.
 
