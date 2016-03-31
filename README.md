@@ -10,7 +10,9 @@ Then, to start your Phoenix app:
   1. Install dependencies with `mix deps.get`
   2. In case you want to seed the database, run `mix run priv/repo/seeds.exs`
      The seeding will run against the dev schema unless you specify another environment like so:
-     MIX_ENV=prod mix run priv/repo/seeds.exs
+     `MIX_ENV=prod mix run priv/repo/seeds.exs`
+     In you want to execute the tests on your machine, please seed a test database:
+     `MIX_ENV=test mix run priv/repo/seeds.exs`
   3. Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
