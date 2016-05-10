@@ -32,6 +32,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:Mimus_polyglottos_adult_02_cropped.jpg"}
     Couchdb.insert mockingbird
 
+    dunnock = Poison.encode! %Bird{
+      name: "Dunnock",
+      link: "Dunnock_crop2",
+      location: "Torquay, Devon, England",
+      image: "Dunnock_crop2.jpg",
+      date: "April 2008",
+      attribution: "\"A Dunnock, Prunella modularis,\" by Smalljim - Own work, CC BY 3.0",
+      attribution_link: "https://commons.wikimedia.org/w/index.php?curid=3828054"}
+    Couchdb.insert dunnock
+
     nuthatch = Poison.encode! %Bird{
       name: "Eurasian Nuthatch (Sitta europaea)",
       link: "Eurasian_nuthatch",
