@@ -5,7 +5,7 @@ defmodule BirdWatch.BirdControllerTest do
   @endpoint BirdWatch.Endpoint
 
   test "GET /" do
-    conn = get build_conn(), "/"
+    conn = get conn(), "/"
     assert html_response(conn, 200) =~ "European Robin"
   end
 

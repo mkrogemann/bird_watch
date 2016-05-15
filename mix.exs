@@ -4,8 +4,8 @@ defmodule BirdWatch.Mixfile do
   def project do
     [
       app: :bird_watch,
-      version: "0.2.0",
-      elixir: "~> 1.2",
+      version: "0.1.0",
+      elixir: "~> 1.0",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix] ++ Mix.compilers,
       build_embedded: Mix.env == :prod,
@@ -32,15 +32,15 @@ defmodule BirdWatch.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.2.0-rc"},
-      {:phoenix_html, "~> 2.5"},
+      {:phoenix, "~> 1.1"},
+      {:phoenix_html, "~> 2.3"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:cowboy, "~> 1.0"},
-      {:httpoison, "~> 0.8"},
+      {:httpoison, "~> 0.8.0"},
       {:coverex, "~> 1.4.7", only: [:dev, :test]},
       {:poison, "~> 1.5"},
       {:couchdb_connector, "~> 0.2"},
-      {:credo, "~> 0.3", only: [:dev, :test]}
+      {:credo, "~> 0.2", only: [:dev, :test]}
     ]
   end
 end
