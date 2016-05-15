@@ -9,18 +9,11 @@ defmodule BirdWatch.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", BirdWatch do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
-    get "/", BirdController, :index
+    resources "/", BirdController, only: [:index] do
+      resources "/sightings", SightingsController, only: [:index, :new, :create]
+    end
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", BirdWatch do
-  #   pipe_through :api
-  # end
 end
