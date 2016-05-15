@@ -4,10 +4,10 @@ defmodule BirdWatch.Mixfile do
   def project do
     [
       app: :bird_watch,
-      version: "0.1.0",
+      version: "0.2.0-dev",
       elixir: "~> 1.0",
       elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix] ++ Mix.compilers,
+      compilers: [:phoenix, :gettext] ++ Mix.compilers,
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps
@@ -20,7 +20,7 @@ defmodule BirdWatch.Mixfile do
   def application do
     [mod: {BirdWatch, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :httpoison, :couchdb_connector]]
+                    :gettext, :httpoison, :couchdb_connector]]
   end
 
   # Specifies which paths to compile per environment.
@@ -32,14 +32,15 @@ defmodule BirdWatch.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.1"},
-      {:phoenix_html, "~> 2.3"},
+      {:phoenix, "~> 1.1.4"},
+      {:phoenix_html, "~> 2.5"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:cowboy, "~> 1.0"},
       {:httpoison, "~> 0.8.0"},
+      {:gettext, "~> 0.11"},
       {:coverex, "~> 1.4.7", only: [:dev, :test]},
       {:poison, "~> 1.5"},
-      {:couchdb_connector, "~> 0.2"},
+      {:couchdb_connector, "~> 0.3"},
       {:credo, "~> 0.2", only: [:dev, :test]}
     ]
   end

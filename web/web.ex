@@ -41,6 +41,8 @@ defmodule BirdWatch.Web do
       use Phoenix.HTML
 
       import BirdWatch.Router.Helpers
+      import BirdWatch.ErrorHelpers
+      import BirdWatch.Gettext
     end
   end
 
