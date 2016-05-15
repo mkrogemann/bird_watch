@@ -1,7 +1,9 @@
 BirdWatch [![Build Status](https://travis-ci.org/mkrogemann/bird_watch.svg)](https://travis-ci.org/mkrogemann/bird_watch)
 ===========
 
-The code in this repo has been developed for a [blog post](https://blog.codecentric.de/en/2016/01/elixir-phoenix-couchdb-introduction/).
+The code in this repo has been developed for a series of blog posts. The repo has tags that correspond to episodes within the blog series as follows:
+
+Tag v0.1.0 |> [Elixir, Phoenix and CouchDB — An Introduction](https://blog.codecentric.de/en/2016/01/elixir-phoenix-couchdb-introduction/)
 
 Before you try to start the app, please install and start CouchDB.
 
@@ -9,9 +11,8 @@ Then, to start your Phoenix app:
 
   1. Install dependencies with `mix deps.get`
   2. In case you want to seed the database, run `mix run priv/repo/seeds.exs`
-     The seeding will run against the dev schema unless you specify another environment like so:
-     `MIX_ENV=prod mix run priv/repo/seeds.exs`
-     In you want to execute the tests on your machine, please seed a test database:
+     The seeding will run against the dev schema unless you specify another environment.
+     If case you want to execute the tests on your machine, you would seed a test database like this:
      `MIX_ENV=test mix run priv/repo/seeds.exs`
   3. Start Phoenix endpoint with `mix phoenix.server`
 
