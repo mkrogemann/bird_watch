@@ -38,10 +38,10 @@ defmodule BirdWatch.Mixfile do
       {:cowboy, "~> 1.0"},
       {:httpoison, "~> 0.8.0"},
       {:gettext, "~> 0.11"},
-      {:coverex, "~> 1.4.7", only: [:dev, :test]},
+      {:excoveralls, "~> 0.5.4", only: [:dev, :test]},
       {:poison, "~> 1.5"},
       {:couchdb_connector, "~> 0.3"},
-      {:credo, "~> 0.2", only: [:dev, :test]}
+      {:credo, "~> 0.3", only: [:dev, :test]}
     ]
   end
 end
