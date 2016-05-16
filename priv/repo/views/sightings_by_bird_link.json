@@ -1,0 +1,8 @@
+{
+  "_id" : "_design/sightings",
+  "views" : {
+    "by_bird_link" : {
+      "map" : "function(doc){if (doc.type == 'sighting') emit(doc.bird_link, doc)}"
+    }
+  }
+}

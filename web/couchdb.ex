@@ -42,7 +42,7 @@ defmodule BirdWatch.Couchdb do
   end
 
   def insert document do
-    Writer.create @database_properties, document
+    Writer.create_generate @database_properties, document
   end
 
   def read id do

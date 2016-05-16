@@ -5,6 +5,7 @@
 
 alias BirdWatch.Couchdb
 alias BirdWatch.Bird
+alias BirdWatch.Sighting
 
 Couchdb.test_database_server_connection
 
@@ -12,7 +13,10 @@ case Couchdb.create do
   {:ok, :database_exists} ->
     IO.puts "Database could not be created. Please check if it already exists"
   {:ok, _} ->
+
+    # Birds and Sightings
     robin = Poison.encode! %Bird{
+      type: :bird,
       name: "European Robin (Erithacus rubecula)",
       link: "European_robin",
       location: "53° 35′ 39.8″ N, 2° 40′ 31.39″ W",
@@ -22,7 +26,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:Erithacus_rubecula_with_cocked_head.jpg"}
     Couchdb.insert robin
 
+    robin_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "European_robin",
+      location: "53° 35′ 39.8″ N, 2° 40′ 31.39″ W",
+      date: "27 February 2014, 17:42:10"
+    }
+    Couchdb.insert robin_sighting
+
     mockingbird = Poison.encode! %Bird{
+      type: :bird,
       name: "Northern Mockingbird (Mimus polyglottos)",
       link: "Northern_mockingbird",
       location: "New Hampshire, USA",
@@ -32,7 +45,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:Mimus_polyglottos_adult_02_cropped.jpg"}
     Couchdb.insert mockingbird
 
+    mockingbird_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "Northern_mockingbird",
+      location: "New Hampshire, USA",
+      date: "23 May 2009"
+    }
+    Couchdb.insert mockingbird_sighting
+
     dunnock = Poison.encode! %Bird{
+      type: :bird,
       name: "Dunnock",
       link: "Dunnock_crop2",
       location: "Torquay, Devon, England",
@@ -42,7 +64,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/w/index.php?curid=3828054"}
     Couchdb.insert dunnock
 
+    dunnock_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "Dunnock_crop2",
+      location: "Torquay, Devon, England",
+      date: "April 2008"
+    }
+    Couchdb.insert dunnock_sighting
+
     nuthatch = Poison.encode! %Bird{
+      type: :bird,
       name: "Eurasian Nuthatch (Sitta europaea)",
       link: "Eurasian_nuthatch",
       location: "Kent, UK",
@@ -52,7 +83,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:Sitta_europaea_-Kent,_England-8.jpg"}
     Couchdb.insert nuthatch
 
+    nuthatch_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "Eurasian_nuthatch",
+      location: "Kent, UK",
+      date: "5 March 2014, 13:17:58"
+    }
+    Couchdb.insert nuthatch_sighting
+
     bluetit = Poison.encode! %Bird{
+      type: :bird,
       name: "Eurasian Blue Tit (Cyanistes caeruleus)",
       link: "Eurasian_blue_tit",
       location: "Unknown",
@@ -62,7 +102,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:Parus_caeruleus01.jpg"}
     Couchdb.insert bluetit
 
+    bluetit_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "Eurasian_blue_tit",
+      location: "Unknown",
+      date: "10 January 2007, 20:06"
+    }
+    Couchdb.insert bluetit_sighting
+
     woodpecker = Poison.encode! %Bird{
+      type: :bird,
       name: "Great Spotted Woodpecker (Dendrocopos major)",
       link: "Great_spotted_woodpecker",
       location: "Unknown",
@@ -72,7 +121,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:FlyingDendrocoposMajor.jpg"}
     Couchdb.insert woodpecker
 
+    woodpecker_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "Great_spotted_woodpecker",
+      location: "Unknown",
+      date: "2 December 2007"
+    }
+    Couchdb.insert woodpecker_sighting
+
     kingfisher = Poison.encode! %Bird{
+      type: :bird,
       name: "Common Kingfisher (Alcedo atthis)",
       link: "Common_kingfisher",
       location: "Naturschutzgebiet \"Berkelaue II\" (NSG BOR-070) in 48691 Vreden",
@@ -82,7 +140,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:Ein_Eisvogel_im_Schwebflug.jpg"}
     Couchdb.insert kingfisher
 
+    kingfisher_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "Common_kingfisher",
+      location: "Naturschutzgebiet \"Berkelaue II\" (NSG BOR-070) in 48691 Vreden",
+      date: "14 June 2011, 11:12:11"
+    }
+    Couchdb.insert kingfisher_sighting
+
     jay = Poison.encode! %Bird{
+      type: :bird,
       name: "Eurasian Jay (Garrulus glandarius)",
       link: "Eurasian_jay",
       location: "50° 20′ 27.27″ N, 5° 09′ 46.54″ E",
@@ -92,7 +159,16 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:Garrulus_glandarius_B_Luc_Viatour.jpg"}
     Couchdb.insert jay
 
+    jay_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "Eurasian_jay",
+      location: "50° 20′ 27.27″ N, 5° 09′ 46.54″ E",
+      date: "2008"
+    }
+    Couchdb.insert jay_sighting
+
     blackbird = Poison.encode! %Bird{
+      type: :bird,
       name: "Common Blackbird (Turdus merula)",
       link: "Common_blackbird",
       location: "Unknown",
@@ -102,8 +178,20 @@ case Couchdb.create do
       attribution_link: "https://commons.wikimedia.org/wiki/File:Blackbird_2.jpg"}
     Couchdb.insert blackbird
 
+    blackbird_sighting = Poison.encode! %Sighting{
+      type: :sighting,
+      bird_link: "Common_blackbird",
+      location: "Unknown",
+      date: "30 May 2007"
+    }
+    Couchdb.insert blackbird_sighting
+
+    # Views
     by_link_code = File.read! "priv/repo/views/bird_by_link.json"
     Couchdb.create_view "bird", by_link_code
+
+    sightings_by_bird_link_code = File.read! "priv/repo/views/sightings_by_bird_link.json"
+    Couchdb.create_view "sightings", sightings_by_bird_link_code
 
     IO.puts "Database has been seeded successfully"
 
