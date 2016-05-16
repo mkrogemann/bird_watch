@@ -18,3 +18,16 @@ body, form, ul, table {
 .bird-list {
   padding-top: 15px;
 }
+
+#sightings-list {
+  padding-top: 30px;
+}
+
+.sightings-button {
+  padding-right: 50px;
+  float: left;
+}
+
+.sightings-item {
+  font-size: 150%;
+}

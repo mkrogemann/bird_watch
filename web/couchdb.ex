@@ -64,6 +64,15 @@ defmodule BirdWatch.Couchdb do
     end
   end
 
+  def sightings_by_bird_link link do
+    {:ok, sightings_json} = View.document_by_key @database_properties, "sightings", "by_bird_link", link
+    result_set = Poison.Parser.parse! sightings_json
+    case result_set["rows"] do
+      [] -> []
+      _ -> {:ok, result_set["rows"]}
+    end
+  end
+
   defp not_found do
     {:error, :not_found}
   end

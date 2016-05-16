@@ -10,9 +10,20 @@
         <p class="bird-list">
           Date: <%= bird["value"]["date"] %><br>
           Location: <%= bird["value"]["location"] %><br>
-          <a class="btn btn-lg" href="images/800/<%= bird["value"]["image"] %>" data-toggle="tooltip" data-placement="bottom" title="Zoom" data-featherlight="image"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></a>
-          <a class="btn btn-lg" href="<%= bird["value"]["attribution_link"] %>" data-toggle="tooltip" data-placement="bottom" title="Sightings" target="_blank"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
-          <a class="btn btn-lg" href="<%= bird["value"]["attribution_link"] %>" data-toggle="tooltip" data-placement="right" title="<%= info(bird) %>" target="_blank"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+          <a class="btn btn-lg" href="images/800/<%= bird["value"]["image"] %>"
+            data-toggle="tooltip" data-placement="top" title="Zoom"
+            data-featherlight="image">
+            <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+          </a>
+          <a class="btn btn-lg" href="<%= bird["value"]["link"] %>/sightings"
+            data-toggle="tooltip" data-placement="top" title="Sightings">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+          </a>
+          <a class="btn btn-lg" href="<%= bird["value"]["attribution_link"] %>"
+            data-toggle="tooltip" data-placement="right" title="<%= info(bird) %>"
+            target="_blank"><span class="glyphicon glyphicon-info-sign"
+            aria-hidden="true"></span>
+          </a>
         </p>
       </div>
    </li>

@@ -1,0 +1,30 @@
+<h2>
+<a href="/images/800/<%= @sightings[:bird]["image"] %>"
+  data-featherlight="image">
+  <img class="media-object thumbnail"
+  src="/images/175/<%= @sightings[:bird]["image"] %>"
+  alt="<%= @sightings[:bird]["name"] %>">
+</a>
+<%= @sightings[:bird]["name"] %> — Sightings</h2>
+<div id="sightings-list">
+  <table class="table">
+    <tbody>
+    <%= for sightings <- @sightings[:sightings] do %>
+      <tr>
+        <td class="sightings-item"><%= sightings["value"]["date"] %></td>
+        <td class="sightings-item"><%= sightings["value"]["location"] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <div class="sightings-button">
+    <a href="<%= bird_path(@conn, :index) %>" class="btn btn-primary btn-lg"
+      role="button">Back to birds
+    </a>
+  </div>
+  <div class="sightings-button">
+    <a href="<%= bird_path(@conn, :index) %>" class="btn btn-success btn-lg"
+      role="button">New sighting
+    </a>
+  </div>
+</div>
