@@ -5,7 +5,7 @@ defmodule BirdWatch.Mixfile do
     [
       app: :bird_watch,
       version: "0.1.0",
-      elixir: "~> 1.0",
+      elixir: "~> 1.2",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix] ++ Mix.compilers,
       build_embedded: Mix.env == :prod,
@@ -39,7 +39,7 @@ defmodule BirdWatch.Mixfile do
       {:httpoison, "~> 0.8.0"},
       {:coverex, "~> 1.4.7", only: [:dev, :test]},
       {:poison, "~> 1.5"},
-      {:couchdb_connector, "~> 0.2"},
+      {:couchdb_connector, "~> 0.4"},
       {:credo, "~> 0.2", only: [:dev, :test]}
     ]
   end
