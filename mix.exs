@@ -36,10 +36,10 @@ defmodule BirdWatch.Mixfile do
       {:phoenix_html, "~> 2.6"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:cowboy, "~> 1.0"},
-      {:httpoison, "~> 0.8.0"},
+      {:httpoison, "~> 0.11"},
       {:coverex, "~> 1.4.7", only: [:dev, :test]},
       {:poison, "~> 1.5"},
-      {:couchdb_connector, "~> 0.4"},
+      {:couchdb_connector, "~> 0.5"},
       {:credo, "~> 0.2", only: [:dev, :test]}
     ]
   end
