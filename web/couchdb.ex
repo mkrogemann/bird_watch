@@ -42,7 +42,7 @@ defmodule BirdWatch.Couchdb do
   end
 
   def insert document do
-    Writer.create @database_properties, document
+    Writer.create_generate @database_properties, document
   end
 
   def read id do
@@ -56,7 +56,10 @@ defmodule BirdWatch.Couchdb do
   end
 
   def bird_by_link link do
-    {:ok, birds_json} = View.document_by_key @database_properties, "bird", "by_link", link
+    {:ok, birds_json} = View.document_by_key(
+      @database_properties,
+      %{design: "bird", view: "by_link", key: link}
+    )
     result_set = Poison.Parser.parse! birds_json
     case result_set["rows"] do
       [] -> not_found()
