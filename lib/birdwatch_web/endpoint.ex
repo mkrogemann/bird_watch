@@ -1,6 +1,22 @@
 defmodule BirdWatchWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :bird_watch
 
+  # The session will be stored in the cookie and signed,
+  # this means its contents can be read but not tampered with.
+  # Set :encryption_salt if you would also like to encrypt it.
+  @session_options [
+    store: :cookie,
+    key: "_bird_watch_key",
+    signing_salt: "kU6D9s8w"
+  ]
+
+  socket("/socket", BirdWatchWeb.UserSocket,
+    websocket: true,
+    longpoll: false
+  )
+
+  socket("/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]])
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
@@ -20,8 +36,13 @@ defmodule BirdWatchWeb.Endpoint do
     plug(Phoenix.CodeReloader)
   end
 
+  plug(Phoenix.LiveDashboard.RequestLogger,
+    param_key: "request_logger",
+    cookie_key: "request_logger"
+  )
+
   plug(Plug.RequestId)
-  plug(Plug.Logger)
+  plug(Plug.Telemetry, event_prefix: [:phoenix, :endpoint])
 
   plug(Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
@@ -31,12 +52,6 @@ defmodule BirdWatchWeb.Endpoint do
 
   plug(Plug.MethodOverride)
   plug(Plug.Head)
-
-  plug(Plug.Session,
-    store: :cookie,
-    key: "_bird_watch_key",
-    signing_salt: "kU6D9s8w"
-  )
-
+  plug(Plug.Session, @session_options)
   plug(BirdWatchWeb.Router)
 end
