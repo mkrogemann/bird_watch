@@ -45,13 +45,4 @@ defmodule BirdWatch.Mixfile do
       {:plug_cowboy, "~> 2.0"}
     ]
   end
-
-  def aliases do
-    [
-      test: [
-        "run priv/repo/seeds.exs",
-        "test"
-      ]
-    ]
-  end
 end

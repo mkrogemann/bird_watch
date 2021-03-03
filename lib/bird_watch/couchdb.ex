@@ -41,8 +41,8 @@ defmodule BirdWatch.Couchdb do
     end
   end
 
-  def destroy!(props) do
-    Couchdb.Connector.Storage.storage_down(props)
+  def destroy! do
+    Couchdb.Connector.Storage.storage_down(@database_properties)
   end
 
   def insert(document) do
