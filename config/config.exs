@@ -6,18 +6,19 @@
 use Mix.Config
 
 # Configures the endpoint
-config :bird_watch, BirdWatch.Endpoint,
+config :bird_watch, BirdWatchWeb.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
   secret_key_base: "uATboE7xe64yJpO+0VgSI56MDhQBILIWcRwr+CL+01K9PNyLPyolPDKoAlbjLHnQ",
+  pubsub_server: BirdWatch.PubSub,
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: BirdWatch.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  live_view: [signing_salt: "HNKcYMPI"]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
+
+config :phoenix, :json_library, Poison
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

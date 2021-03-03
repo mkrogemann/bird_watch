@@ -1,11 +1,8 @@
-defmodule BirdWatch.BirdControllerTest do
-  use ExUnit.Case
-  use Phoenix.ConnTest
+defmodule BirdWatchWeb.BirdControllerTest do
+  use BirdWatchWeb.ConnCase
 
-  @endpoint BirdWatch.Endpoint
-
-  test "GET /" do
-    conn = get conn(), "/"
+  test("GET /", %{conn: conn}) do
+    conn = get(conn, "/")
     assert html_response(conn, 200) =~ "European Robin"
   end
 

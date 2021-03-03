@@ -18,7 +18,7 @@ defmodule BirdWatch.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {BirdWatch, []},
+    [mod: {BirdWatch.Application, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
                     :httpoison, :couchdb_connector]]
   end
@@ -32,15 +32,25 @@ defmodule BirdWatch.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.2.0"},
-      {:phoenix_html, "~> 2.6"},
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:cowboy, "~> 1.0"},
-      {:httpoison, "~> 0.11"},
-      {:coverex, "~> 1.4.7", only: [:dev, :test]},
-      {:poison, "~> 1.5"},
+      {:phoenix, "~> 1.5.3"},
+      {:phoenix_html, "~> 2.11"},
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:phoenix_live_dashboard, "~> 0.2.0"},
+      # {:cowboy, "~> 1.0"},
+      {:httpoison, "~> 0.10"},
+      {:coverex, "~> 1.5.0", only: [:dev, :test]},
+      {:poison, "~> 3.0"},
       {:couchdb_connector, "~> 0.5"},
-      {:plug_cowboy, "~> 1.0"}
+      {:plug_cowboy, "~> 2.0"}
+    ]
+  end
+
+  def aliases do
+    [
+      test: [
+        "run priv/repo/test_seeds.exs",
+        "test"
+      ]
     ]
   end
 end

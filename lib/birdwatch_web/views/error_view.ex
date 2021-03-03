@@ -1,5 +1,5 @@
-defmodule BirdWatch.ErrorView do
-  use BirdWatch.Web, :view
+defmodule BirdWatchWeb.ErrorView do
+  use BirdWatchWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"
@@ -12,6 +12,6 @@ defmodule BirdWatch.ErrorView do
   # In case no render clause matches or no
   # template is found, let's render it as 500
   def template_not_found(_template, assigns) do
-    render "500.html", assigns
+    render("500.html", assigns)
   end
 end

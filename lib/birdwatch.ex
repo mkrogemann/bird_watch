@@ -1,0 +1,2 @@
+defmodule BirdWatch do
+end
