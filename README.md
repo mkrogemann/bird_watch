@@ -1,3 +1,9 @@
+# Updated bird_watch
+
+I was wanting to play around with CouchDB but the original bird_watch repo did not work out of the box, so I set out to update it to the latest version.
+
+# Original README.md
+
 _bird_watch [![Build Status](https://travis-ci.org/mkrogemann/bird_watch.svg)](https://travis-ci.org/mkrogemann/bird_watch)
 ===========
 

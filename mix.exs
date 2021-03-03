@@ -10,7 +10,7 @@ defmodule BirdWatch.Mixfile do
       compilers: [:phoenix] ++ Mix.compilers,
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
-      deps: deps
+      deps: deps()
     ]
   end
 
@@ -40,7 +40,7 @@ defmodule BirdWatch.Mixfile do
       {:coverex, "~> 1.4.7", only: [:dev, :test]},
       {:poison, "~> 1.5"},
       {:couchdb_connector, "~> 0.5"},
-      {:credo, "~> 0.2", only: [:dev, :test]}
+      {:plug_cowboy, "~> 1.0"}
     ]
   end
 end
