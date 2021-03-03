@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :bird_watch, BirdWatch.Endpoint,
+config :bird_watch, BirdWatchWeb.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -14,4 +14,6 @@ config :couchdb_connector,
   database: "birds_test",
   hostname: "localhost",
   protocol: "http",
-  port: 5984
+  port: 5984,
+  user: "admin",
+  password: "admin"

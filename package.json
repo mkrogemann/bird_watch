@@ -1,6 +1,5 @@
 {
-  "repository": {
-  },
+  "repository": {},
   "dependencies": {
     "brunch": "2.7.4",
     "babel-brunch": "~6.0.0",

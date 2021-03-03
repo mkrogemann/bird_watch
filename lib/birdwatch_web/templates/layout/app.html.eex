@@ -11,7 +11,7 @@
 
   <body>
     <div class="container">
-      <%= render @view_module, @view_template, assigns %>
+      <%= @inner_content %>
       <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script>
       <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     </div>
@@ -19,6 +19,6 @@
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
-    </script>    
+    </script>
   </body>
 </html>
