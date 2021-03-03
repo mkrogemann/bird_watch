@@ -39,6 +39,6 @@ defmodule BirdWatchWeb.Telemetry do
   end
 
   defp periodic_measurements do
-
+    []
   end
 end

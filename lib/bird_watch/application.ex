@@ -5,6 +5,7 @@ defmodule BirdWatch.Application do
   # for more information on OTP Applications
   def start(_type, _args) do
     children = [
+      BirdWatchWeb.Telemetry,
       # Start the endpoint when the application starts
       BirdWatchWeb.Endpoint,
       # Start the PubSub system

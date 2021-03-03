@@ -36,7 +36,8 @@ defmodule BirdWatch.Mixfile do
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_dashboard, "~> 0.2.0"},
-      # {:cowboy, "~> 1.0"},
+      {:telemetry_metrics, "~> 0.4"},
+      {:telemetry_poller, "~> 0.4"},
       {:httpoison, "~> 0.10"},
       {:coverex, "~> 1.5.0", only: [:dev, :test]},
       {:poison, "~> 3.0"},
@@ -48,7 +49,7 @@ defmodule BirdWatch.Mixfile do
   def aliases do
     [
       test: [
-        "run priv/repo/test_seeds.exs",
+        "run priv/repo/seeds.exs",
         "test"
       ]
     ]
