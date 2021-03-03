@@ -40,6 +40,7 @@ defmodule BirdWatch.Mixfile do
       {:telemetry_poller, "~> 0.4"},
       {:httpoison, "~> 0.10"},
       {:coverex, "~> 1.5.0", only: [:dev, :test]},
+      {:credo, "~> 1.5.5", only: [:dev, :test], runtime: false},
       {:poison, "~> 3.0"},
       {:couchdb_connector, "~> 0.5"},
       {:plug_cowboy, "~> 2.0"}
