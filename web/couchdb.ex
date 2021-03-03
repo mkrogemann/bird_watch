@@ -5,6 +5,8 @@ defmodule BirdWatch.Couchdb do
     protocol: Application.get_env(:couchdb_connector, :protocol),
     hostname: Application.get_env(:couchdb_connector, :hostname),
     database: Application.get_env(:couchdb_connector, :database),
+    user: Application.get_env(:couchdb_connector, :user),
+    password: Application.get_env(:couchdb_connector, :password),
     port: Application.get_env(:couchdb_connector, :port)
   }
 
@@ -30,7 +32,7 @@ defmodule BirdWatch.Couchdb do
       {:ok, %HTTPoison.Response{status_code: 200}} ->
         {:ok, :database_exists}
       {:ok, %HTTPoison.Response{status_code: 404}} ->
-        case Storage.storage_up @database_properties do
+        case Storage.storage_up(@database_properties) do
           {:ok, body} -> {:ok, body}
           {:error, body} -> {:error, body}
         end

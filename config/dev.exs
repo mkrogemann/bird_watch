@@ -37,4 +37,6 @@ config :couchdb_connector,
   database: "birds_dev",
   hostname: "localhost",
   protocol: "http",
-  port: 5984
+  port: 5984,
+  user: "admin",
+  password: "admin"
